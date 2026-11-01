@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "select": "tsx src/cli/select.ts"
+    "select": "tsx src/cli/select.ts",
+    "summarize": "tsx src/cli/summarize.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
