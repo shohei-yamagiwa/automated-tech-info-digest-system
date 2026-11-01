@@ -1,0 +1,64 @@
+name: Tech Digest
+
+on:
+  schedule:
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: dry-run にする(Gamma・Drive・Discord を呼ばない)
+        type: boolean
+        default: false
+      date:
+        description: 対象日(YYYY-MM-DD、JST)。空なら当日
+        type: string
+        default: ""
+      from:
+        description: 開始する工程
+        type: choice
+        options: [select, summarize, slides, deliver]
+        default: select
+
+concurrency:
+  group: tech-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Run digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GAMMA_API_KEY: ${{ secrets.GAMMA_API_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+          TARGET_DATE: ${{ inputs.date }}
+          FROM_STEP: ${{ inputs.from || 'select' }}
+        run: |
+          args=(--from="$FROM_STEP" --date="$TARGET_DATE")
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); else args+=(--no-dry-run); fi
+          npx tsx src/main.ts "${args[@]}"
+      - name: Upload dry-run output
+        if: ${{ always() && inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-output
+          path: |
+            out/
+            !out/**/*.pdf
