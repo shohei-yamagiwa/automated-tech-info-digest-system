@@ -31,7 +31,10 @@ const sourcesSchema = z.strictObject({
           type: z.literal("zenn"),
           topics: z.array(z.string().min(1)).default([]),
         }),
-        z.strictObject({ type: z.literal("qiita") }),
+        z.strictObject({
+          type: z.literal("qiita"),
+          minStocks: z.number().int().nonnegative().default(3),
+        }),
       ]),
     )
     .min(1),

@@ -7,6 +7,7 @@ export type PopularitySignal = {
 export type Candidate = {
   url: string;
   title: string;
+  summary?: string;
   popularity: PopularitySignal[];
 };
 

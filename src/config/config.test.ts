@@ -69,7 +69,7 @@ sources:
       { type: "github-trending" },
       { type: "hatena-hotentry" },
       { type: "zenn", topics: ["typescript"] },
-      { type: "qiita" },
+      { type: "qiita", minStocks: 3 },
     ]);
   });
 

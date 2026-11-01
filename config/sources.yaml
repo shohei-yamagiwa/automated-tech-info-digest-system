@@ -14,4 +14,4 @@ sources:
   - { type: hatena-hotentry }
   - type: zenn
     topics: [typescript, llm, react, kubernetes, aws]
-  - { type: qiita }
+  - { type: qiita, minStocks: 3 }
