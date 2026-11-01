@@ -1,0 +1,10 @@
+selection:
+  count: 10
+  maxPerDomain: 4
+scoring:
+  popularityStrength: 10
+models:
+  relevance: claude-sonnet-5-5
+  summarize: claude-opus-5-5
+slides:
+  numCards: 25
