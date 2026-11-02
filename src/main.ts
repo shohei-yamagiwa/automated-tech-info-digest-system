@@ -1242,10 +1242,10 @@ export async function main(
             const result = existingId
               ? await drive.files.update({ fileId: existingId, media, fields: "id,webViewLink" })
               : await drive.files.create({
-                  requestBody: { name: file.name, parents: [folderId], mimeType: file.mimeType },
-                  media,
-                  fields: "id,webViewLink",
-                });
+                requestBody: { name: file.name, parents: [folderId], mimeType: file.mimeType },
+                media,
+                fields: "id,webViewLink",
+              });
             if (!result.data.id) throw new Error(`Failed to save ${file.name} to Drive`);
             links.set(file.name, result.data.webViewLink ?? `https://drive.google.com/file/d/${result.data.id}/view`);
             break;
