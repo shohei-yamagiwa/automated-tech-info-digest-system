@@ -109,7 +109,7 @@ AI が最新の技術情報を毎日自動で収集・選定・要約し、そ�
 | `exportAs` | `pdf` |
 | `folderId` | Gamma 上に手動で作成した「Tech Digest」フォルダ |
 | `cardSplit` | `auto` |
-| `numCards` | 25（目安の長さ。設定で変更可能） |
+| `numCards` | 10（目安の長さ。設定で変更可能。Gamma のプランにより上限がある） |
 | `imageOptions.source` | `aiGenerated`（画像モデルは指定しない） |
 
 `additionalInstructions` で以下を指示する。
@@ -249,6 +249,6 @@ GitHub Trending の取得には `GITHUB_TOKEN` は不要（HTML を解析する�
 
 1. Gamma のテーマを何種類か試し、`themeId` を決める。
 2. `textMode: generate` で、原稿にない事実が付け足されていないかを digest.json と照らし合わせて確認する。目立つ場合は `preserve` に切り替える。
-3. `numCards: 25` のときに、実際に何枚になり、どう構成されるかを確認する。
+3. `numCards: 10` のときに、実際に何枚になり、どう構成されるかを確認する。
 4. 日本語と 16:9 で出力されているかを確認する。
 5. Gamma の `credits.deducted` と Claude の費用を測り、Anthropic Console の上限額を決める。
