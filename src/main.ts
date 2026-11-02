@@ -821,7 +821,7 @@ export async function main(
           for (let attempt = 0; ; attempt++) {
             try {
               const response = await fetchFn(`https://r.jina.ai/${article.url}`, {
-                headers: { Authorization: `Bearer ${jinaApiKey}`, "X-Return-Format": "markdown" },
+                headers: { Authorization: `Bearer ${jinaApiKey}`, "X-Return-Format": "markdown", "X-Engine": "browser" },
               });
               if (!response.ok) throw new Error(`Jina Reader responded with HTTP ${response.status}`);
               const text = (await response.text()).trim();
