@@ -3,20 +3,14 @@ interests:
     description: コーディングエージェントの新機能、開発ワークフローへの導入、プロンプト設計、評価・安全性に関する知見
     weight: 1.2
   - name: Webフロントエンド
-    description: ブラウザ標準、フレームワークとビルドツールの進化、パフォーマンスやアクセシビリティの実践
-    weight: 1.0
-  - name: バックエンド/クラウド
+    description: ブラウザ標準、フレームワークとビルドツールの進化
+    weight: 1
+  - name: バックエンド
     description: サーバーサイドの設計と実装、データベース、クラウドサービスの新機能と運用上の知見
-    weight: 1.0
-  - name: インフラ/DevOps
-    description: コンテナとオーケストレーション、CI/CD、可観測性、IaC、信頼性エンジニアリング
-    weight: 0.85
-  - name: データ分析
-    description: データ収集と前処理、統計解析、機械学習、可視化、データ活用の実践
-    weight: 0.95
+    weight: 1
   - name: 品質保証
     description: テスト設計と自動化、レビュー、品質メトリクス、継続的な品質改善の実践
-    weight: 1.0
+    weight: 1
   - name: アーキテクチャ
     description: ソフトウェア設計の原則とパターン、大規模システムの構成判断、技術的負債との向き合い方
     weight: 1.2
