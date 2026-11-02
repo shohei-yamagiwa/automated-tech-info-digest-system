@@ -216,7 +216,7 @@ Discord の Webhook で以下を投稿する。
 | 用途 | 採用技術 |
 |---|---|
 | 言語・実行環境 | TypeScript、Node.js LTS |
-| パッケージ管理 | pnpm |
+| パッケージ管理 | npm |
 | RSS の解析 | `rss-parser` |
 | HTML の解析（GitHub Trending） | `cheerio` |
 | 本文の取得 | Jina Reader（`fetch` で呼び出す） |

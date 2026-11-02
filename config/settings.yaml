@@ -1,0 +1,13 @@
+selection:
+  count: 10
+  maxPerDomain: 4
+scoring:
+  popularityStrength: 10
+models:
+  relevance: claude-sonnet-5-5
+  summarize: claude-opus-5-5
+slides:
+  numCards: 25
+  # 初回確認で選定したら設定する。未設定の場合は Gamma に送らない。
+  # themeId: ""
+  # folderId: ""

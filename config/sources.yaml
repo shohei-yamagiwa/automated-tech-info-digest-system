@@ -1,0 +1,17 @@
+sources:
+  - { type: rss, name: GitHub Blog, url: "https://github.blog/feed/" }
+  - { type: rss, name: AWS News Blog, url: "https://aws.amazon.com/blogs/aws/feed/" }
+  - { type: rss, name: Cloudflare Blog, url: "https://blog.cloudflare.com/rss/" }
+  - { type: rss, name: OpenAI News, url: "https://openai.com/news/rss.xml" }
+  - { type: rss, name: Google Developers Blog, url: "https://developers.googleblog.com/feeds/posts/default" }
+  - { type: rss, name: web.dev, url: "https://web.dev/feed.xml" }
+  - { type: rss, name: Vercel Blog, url: "https://vercel.com/atom" }
+  - { type: rss, name: Engineering at Meta, url: "https://engineering.fb.com/feed/" }
+  - { type: rss, name: Martin Fowler, url: "https://martinfowler.com/feed.atom" }
+  - { type: rss, name: MDN Blog, url: "https://developer.mozilla.org/en-US/blog/rss.xml" }
+  - { type: hackernews, minPoints: 100 }
+  - { type: github-trending }
+  - { type: hatena-hotentry }
+  - type: zenn
+    topics: [typescript, ruby, java, react, llm, claude, codex, gemini, mcp, test]
+  - { type: qiita, minStocks: 3 }
