@@ -6,6 +6,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { Readable } from "node:stream";
 import { describe, expect, it } from "vitest";
+import { parse as parseYaml } from "yaml";
 import { main, type Deps } from "./main.js";
 
 const NOW = new Date("2026-11-02T22:10:00Z");
@@ -424,7 +425,8 @@ describe("引数と事前検証", () => {
   });
 
   it("accepts the config files in the repository", async () => {
-    const t = await setup({ judge: () => ({ domain: "AI/LLM" }) });
+    const { interests } = parseYaml(readFileSync("config/interests.yaml", "utf-8")) as { interests: { name: string }[] };
+    const t = await setup({ judge: () => ({ domain: interests[0]!.name }) });
     for (const path of ["config/interests.yaml", "config/sources.yaml", "config/settings.yaml", "prompts/summarize.md"]) {
       await writeFile(join(t.rootDir, path), readFileSync(path, "utf-8"));
     }
