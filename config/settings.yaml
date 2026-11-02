@@ -8,5 +8,5 @@ models:
   summarize: claude-opus-5-5
 slides:
   numCards: 32
-  themeId: stardust
+  themeId: default-light
   folderId: fo_50ncquzg1tgz175
