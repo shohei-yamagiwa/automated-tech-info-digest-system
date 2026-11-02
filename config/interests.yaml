@@ -1,19 +1,25 @@
 interests:
   - name: AI/LLM
     description: LLM の新モデル、API や SDK の更新、エージェントや RAG の設計と実運用、評価・安全性に関する知見
-    weight: 1.0
+    weight: 1.05
   - name: Webフロントエンド
     description: ブラウザ標準、フレームワークとビルドツールの進化、パフォーマンスやアクセシビリティの実践
-    weight: 1.0
+    weight: 0.8
   - name: バックエンド/クラウド
     description: サーバーサイドの設計と実装、データベース、クラウドサービスの新機能と運用上の知見
-    weight: 1.0
+    weight: 1.05
   - name: インフラ/DevOps
     description: コンテナとオーケストレーション、CI/CD、可観測性、IaC、信頼性エンジニアリング
-    weight: 1.0
+    weight: 0.85
+  - name: データ分析
+    description: データ収集と前処理、統計解析、機械学習、可視化、データ活用の実践
+    weight: 0.95
+  - name: 品質保証
+    description: テスト設計と自動化、レビュー、品質メトリクス、継続的な品質改善の実践
+    weight: 0.95
   - name: アーキテクチャ
     description: ソフトウェア設計の原則とパターン、大規模システムの構成判断、技術的負債との向き合い方
     weight: 1.0
   - name: 形式手法
     description: 仕様記述、モデル検査、定理証明、型システムを用いた正しさの保証とその実務への応用
-    weight: 1.0
+    weight: 0.9
