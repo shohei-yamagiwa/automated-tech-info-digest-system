@@ -13,5 +13,5 @@ sources:
   - { type: github-trending }
   - { type: hatena-hotentry }
   - type: zenn
-    topics: [typescript, llm, react, kubernetes, aws]
+    topics: [typescript, ruby, java, react, llm, claude, codex, gemini, mcp, test]
   - { type: qiita, minStocks: 3 }
