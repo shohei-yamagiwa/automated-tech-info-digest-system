@@ -7,6 +7,6 @@ models:
   relevance: claude-sonnet-5-5
   summarize: claude-opus-5-5
 slides:
-  numCards: 10
-  themeId: stardust
+  numCards: 32
+  themeId: default-light
   folderId: fo_50ncquzg1tgz175
