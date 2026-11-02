@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "start": "tsx src/main.ts"
+    "start": "tsx src/main.ts",
+    "edit:interests": "tsx src/interests-editor.ts"
   },
   "devDependencies": {
     "@types/node": "26.6.6",
